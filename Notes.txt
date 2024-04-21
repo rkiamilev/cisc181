@@ -32,7 +32,7 @@ Add it to solution
 
 Add a project reference (EaglesAPI references EaglesEF)
         cd EaglesAPI
-	dotnet add reference ..\EaglesEF\EaglesEF.csproj
+	dotnet add reference /Users/rickykiamilev/Downloads/cisc437/PS5/Eagles/EaglesAPI/ ../EaglesEF/EaglesEF.csproj
 
 Open Eagles.sln
 
@@ -43,5 +43,6 @@ Add required packages in the package manager console
 	dotnet add package Oracle.EntityFrameworkCore
 	dotnet add package Microsoft.EntityFrameworkCore.Tools
 
-DBScaffold, replace user/pw
+ al, replace user/pw
 	dotnet ef dbcontext scaffold "Data Source=SPRING2024PDB;User ID=UD_RICKYK;Password=UD_RICKYK;" Oracle.EntityFrameworkCore --namespace Eagles.EF.Models --context-namespace Eagles.EF.Data --output-dir Models --context-dir Data --context "EaglesOracleContext" --data-annotations --no-onconfiguring --force
+dotnet ef dbcontext scaffold "Data Source=100.26.50.147:1521/SPRING2024PDB;User ID=UD_RICKYK;Password= UD_RICKYK" Oracle.EntityFrameworkCore --namespace Eagles.EF.Models --context-namespace Eagles.EF.Data --output-dir Models --context-dir Data --context "EaglesOracleContext" --data-annotations --no-onconfiguring --force
