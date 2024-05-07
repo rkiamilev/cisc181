@@ -41,12 +41,12 @@ public partial class Order
     public DateTime OrdersUpdtDt { get; set; }
 
     [InverseProperty("OrderStateOrders")]
-    public virtual ICollection<OrderState> OrderStates { get; } = new List<OrderState>();
+    public virtual ICollection<OrderState> OrderStates { get; set; } = new List<OrderState>();
 
     [ForeignKey("OrdersCustomerId")]
     [InverseProperty("Orders")]
     public virtual Customer OrdersCustomer { get; set; } = null!;
 
     [InverseProperty("OrdersLineOrders")]
-    public virtual ICollection<OrdersLine> OrdersLines { get; } = new List<OrdersLine>();
+    public virtual ICollection<OrdersLine> OrdersLines { get; set; } = new List<OrdersLine>();
 }

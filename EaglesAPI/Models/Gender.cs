@@ -37,5 +37,5 @@ public partial class Gender
     public DateTime GenderUpdtDt { get; set; }
 
     [InverseProperty("CustomerGender")]
-    public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
+    public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 }

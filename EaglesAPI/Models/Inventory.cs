@@ -41,13 +41,16 @@ public partial class Inventory
     [Column("INVENTORY_UPDT_DT", TypeName = "DATE")]
     public DateTime InventoryUpdtDt { get; set; }
 
+    [InverseProperty("InventoryAttrValInventory")]
+    public virtual ICollection<InventoryAttrVal> InventoryAttrVals { get; set; } = new List<InventoryAttrVal>();
+
     [ForeignKey("InventoryProductId")]
     [InverseProperty("Inventories")]
     public virtual Product InventoryProduct { get; set; } = null!;
 
     [InverseProperty("InventoryStateInventory")]
-    public virtual ICollection<InventoryState> InventoryStates { get; } = new List<InventoryState>();
+    public virtual ICollection<InventoryState> InventoryStates { get; set; } = new List<InventoryState>();
 
     [InverseProperty("OrdersLineInventory")]
-    public virtual ICollection<OrdersLine> OrdersLines { get; } = new List<OrdersLine>();
+    public virtual ICollection<OrdersLine> OrdersLines { get; set; } = new List<OrdersLine>();
 }
